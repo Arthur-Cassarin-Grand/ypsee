@@ -1,0 +1,43 @@
+[
+    {
+      "variante": "1",
+      "baseline": "Spécialiste français des soins dentaires en Hongrie",
+      "titre_form": "<span class='emphasis-text-color'>ÉCONOMISEZ JUSQU'À 60%<br />SUR VOTRE OPÉRATION DENTAIRE</span>",
+      "accroche_form":"DEVIS EN LIGNE PAR UN CHIRURGIEN-DENTISTE",
+      "cta_btn_form_nav": "TÉLÉCHARGER LE PROGRAMME",
+      "infobar": "\uD83C\uDF81 BILLETS D'AVIONS + 2 NUITS D'HÔTEL OFFERTS",
+      "args_puces": [
+        "Contrairement à la Turquie, <strong>les cliniques hongroises respectent toutes les législations européennes</strong>.",
+        "Vous serez accompagné(e). Nos chirurgiens-dentistes <strong>parlent tous couramment français</strong>.",
+        "Nous avons pris en charge <strong>plus de 10 000 patients depuis 2007</strong>.",
+        "Nous assurons le <strong>suivi post-opératoire</strong>. Vous pourrez nous contacter à tout moment."
+      ],
+      "pictos": [
+        {
+          "picto_name":"military_tech",
+          "picto_text":"La Hongrie est le <strong>numéro 1 mondial du tourisme dentaire</strong>."
+        },
+        {
+          "picto_name":"verified",
+          "picto_text":"Implants, bridges et couronnes <strong>identiques à ceux posés en France</strong>."
+        },
+        {
+          "picto_name":"health_and_safety",
+          "picto_text":"Intervention <strong>remboursée par la Sécurité Sociale française</strong>."
+        },
+        {
+          "picto_name":"luggage",
+          "picto_text":"Profitez-en pour visiter Budapest, <strong>l'une des plus belles villes d'Europe</strong>."
+        }
+      ],
+      "pictos_color": "var(--primary-color)",
+      "picto_font_size": "4em",
+      "pictos_number": "4",
+      "logos_scp_list": [
+        {"name":"figaro"},
+        {"name":"parisien"},
+        {"name":"echos"},
+        {"name":"capital"}
+      ]
+    }
+]

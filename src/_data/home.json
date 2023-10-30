@@ -1,0 +1,53 @@
+[
+  {
+    "variante": "1",
+    "baseline": "\uD83C\uDF93 Formations en ligne <u><strong>reconnues par l'État</strong></u>, <strong>financées jusqu'à 100%</strong>",
+    "titre_form": "PROPULSEZ VOTRE CARRIÈRE DEPUIS CHEZ VOUS <br /><span class='emphasis-text-color'>AVEC NOS FORMATIONS DIPLÔMANTES EN VIDÉOS</span>",
+    "accroche_form": "TÉLÉCHARGEZ LE PROGRAMME DE VOTRE FORMATION",
+    "cta_btn_form_nav": "TÉLÉCHARGER LE PROGRAMME",
+    "infobar": "RENTRÉE TOUTE L'ANNÉE : IL N'EST PAS TROP TARD !",
+    "args_puces": [
+      "Diplômes et certificats professionnels <strong>reconnus par l'État</strong>, du CAP à BAC+5 selon les formations.",
+      "<strong>250 formations dans 15 filières métier</strong>, en présentiel, hybride ou télétravail.",
+      "Alternance disponible <strong>pour gagner en expérience et être rémunéré</strong>.",
+      "<strong>Plateforme d'échange entre étudiants</strong> pour l'entraide et le networking.",
+      "Avec facilité de paiement sur 12, 24 ou 36 mois, <strong>satisfait ou remboursé</strong>.",
+      "Accompagnement personnalisé pour trouver votre <strong>premier emploi</strong>."
+    ],
+    "pictos": [
+      {
+        "picto_name": "credit_score",
+        "picto_text": "<strong>Finançable jusqu'à 100%</strong>, via le CPF, Pôle Emploi et l'alternance"
+      },
+      {
+        "picto_name": "chair",
+        "picto_text": "<strong>Apprenez de chez vous</strong>, avec des cours vidéos intéractifs"
+      },
+      {
+        "picto_name": "calendar_clock",
+        "picto_text": "<strong>Compatible avec votre emploi du temps</strong>, même si vous travaillez à côté"
+      },
+      {
+        "picto_name": "subscriptions",
+        "picto_text": "<strong>Passez vos examens en ligne</strong>, à votre rythme"
+      }
+    ],
+    "pictos_color": "#EF9B11",
+    "picto_font_size": "4em",
+    "pictos_number": "4",
+    "logos_scp_list": [
+      {
+        "name": "figaro"
+      },
+      {
+        "name": "parisien"
+      },
+      {
+        "name": "echos"
+      },
+      {
+        "name": "capital"
+      }
+    ]
+  }
+]

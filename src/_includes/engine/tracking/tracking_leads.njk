@@ -1,0 +1,17 @@
+{# LEAD GOOGLE ADS TRACKING #}
+<script type="text/javascript">
+    console.log("lead tracké");
+    // Google Ads
+    gtag('event', 'conversion', {
+        'send_to': 'AW-{{ gads_tracking_id }}/{{ gads_valid_leads_tracking_label }}',
+        'value': '50',
+        'currency': "{{ gads_tracking_currency }}"
+    });
+
+    // GA4
+    gtag('event', 'generate_lead', {
+        'send_to': '{{ ga4_tag }}',
+        'value': '50',
+        'currency': "{{ gads_tracking_currency }}"
+    });
+</script>

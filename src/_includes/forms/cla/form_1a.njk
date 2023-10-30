@@ -1,0 +1,336 @@
+{# Formulaire sur 1 colonne, avec type de RDV #}
+<style>
+    .content .titre_formulaire {
+        font-weight: bold;
+        font-size: 1.5em;
+        letter-spacing: -0.05em;
+        text-align: center;
+        padding-top: 20px;
+        color: #8D5524;
+    }
+
+    .form-client input[type="text"], .input-text, .form-client input[type="email"], .form-client input[type="tel"] {
+        width: 95%;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1.2em;
+        margin-bottom: 1rem;
+        border: 1px solid lightgray;
+        box-shadow: 2px 2px 5px rgb(128, 128, 128);
+        color: var(--normal-color);
+    }
+
+    .form-client ::placeholder {
+        color: var(--normal-color);
+    }
+
+    .form-client .form-conscent-container {
+        text-align: justify;
+    }
+
+    .form-client .form-conscent-container .conscent-checkbox {
+        transform: scale(1.5);
+        margin-right: 1rem;
+    }
+
+    .form-client input[type="radio"] {
+        transform: scale(1.5);
+    }
+
+    .form-client select {
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1.2em;
+        margin-bottom: 1rem;
+        border: 1px solid lightgray;
+        box-shadow: 2px 2px 5px rgb(128, 128, 128);
+        color: var(--normal-color);
+    }
+
+    .form-checkbox-label {
+        line-height: 1.5em;
+    }
+
+    .form-client-btn-submit-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-client-btn-submit {
+        border-radius: 20px;
+        padding: 20px 60px;
+        background-color: var(--primary-color);
+        border: 0;
+        color: var(--normal-color);
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+</style>
+<div class="align-center">
+    <form id="form-catalog" class="form-client">
+        <select name="thematique" id="thematique" required>
+            <option value="" selected="selected">Quelle formation vous intéresse ?</option>
+            <option value="Assurance">Assurance</option>
+            <option value="Banque">Banque</option>
+            <option value="Banque - Assurance">Banque - Assurance</option>
+            <option value="Banque - Gestion de patrimoine">Banque - Gestion de patrimoine</option>
+            <option value="Commerce - Vente">Commerce - Vente</option>
+            <option value="Commerce international">Commerce international</option>
+            <option value="Commercial - Relation client">Commercial - Relation client</option>
+            <option value="Immobilier">Immobilier</option>
+            <option value="Relation client">Relation client</option>
+            <option value="Relation client dans le tourisme">Relation client dans le tourisme</option>
+            <option value="Retail">Retail</option>
+            <option value="Retail - Point de vente">Retail - Point de vente</option>
+            <option value="Sport Business">Sport Business</option>
+            <option value="Tourisme">Tourisme</option>
+            <option value="Animation">Animation</option>
+            <option value="Animation - 3D - VFX">Animation - 3D - VFX</option>
+            <option value="Bachelor Motion Designer">Bachelor Motion Designer</option>
+            <option value="Business gaming">Business gaming</option>
+            <option value="Code - Développement">Code - Développement</option>
+            <option value="Code - IT">Code - IT</option>
+            <option value="Communication">Communication</option>
+            <option value="Culture digitale - Logiciels métier">Culture digitale - Logiciels métier</option>
+            <option value="Data - IA">Data - IA</option>
+            <option value="Design">Design</option>
+            <option value="Design de mode">Design de mode</option>
+            <option value="Design gaming">Design gaming</option>
+            <option value="Design graphique et digital">Design graphique et digital</option>
+            <option value="Digital Marketing - Communication">Digital Marketing - Communication</option>
+            <option value="E-sport">E-sport</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Infra - Sécurité">Cybersécurité</option>
+            <option value="Marketing - Communication">Marketing - Communication</option>
+            <option value="Programmation gaming">Programmation gaming</option>
+            <option value="Comptabilité">Comptabilité</option>
+            <option value="Droit - Fiscalité">Droit - Fiscalité</option>
+            <option value="Finance - Comptabilité">Finance - Comptabilité</option>
+            <option value="Finance - Contrôle de gestion">Finance - Contrôle de gestion</option>
+            <option value="Fiscalité">Fiscalité</option>
+            <option value="Gestion de projet">Gestion de projet</option>
+            <option value="Gestion Paie">Gestion Paie</option>
+            <option value="Hébergement - Management">Hébergement - Management</option>
+            <option value="Management">Management</option>
+            <option value="Management - Gestion">Management - Gestion</option>
+            <option value="Management - Gestion de projet">Management - Gestion de projet</option>
+            <option value="Management - Secrétariat">Management - Secrétariat</option>
+            <option value="Management - Stratégie d'entreprise">Management - Stratégie d'entreprise</option>
+            <option value="Management de projet">Management de projet</option>
+            <option value="Management et marketing de la mode">Management et marketing de la mode</option>
+            <option value="Office management - Secrétariat">Office management - Secrétariat</option>
+            <option value="Politique RH - Recrutement">Politique RH - Recrutement</option>
+            <option value="Ressources Humaines - Paie">Ressources Humaines - Paie</option>
+            <option value="Social - Paie">Social - Paie</option>
+        </select>
+        <input type="text" class="input-text" name="prenom" id="prenom" placeholder="Prénom" required />
+        <input type="text" class="input-text" name="nom" id="nom" placeholder="Nom" required />
+        <input type="tel" name="telephone" id="telephone" placeholder="Téléphone" required />
+        <input type="email" name="email" id="email" placeholder="E-mail" required />
+
+        <div class="form-conscent-container">
+            <input type="checkbox" name="consentement" id="consentement" class="conscent-checkbox" required /><label class="form-checkbox-label" for="consentement">J'accepte de recevoir des contenus promotionnels de la part de Formation Sup', pour son compte et pour ses partenaires.</label>
+        </div>
+
+        <div class="form-client-btn-submit-container">
+            <button type="submit" class="form-client-btn-submit" disabled>TÉLÉCHARGER</button>
+        </div>
+        <input type="hidden" id="campagne" name="campagne" value="oGCx" />
+        <input type="hidden" id="gclid" name="gclid" value="" />
+        <input type="hidden" id="source" name="source" value="133" />
+        <input type="hidden" id="formulaire" name="formulaire" value="https://formation-sup.com{{ page.url }}#form" />
+        <input type="hidden" id="url" name="url" value="https://formation-sup.com{{ page.url }}" />
+        <input type="hidden" id="utm_source" name="utm_source" value="{{ default_referer }}" />
+        <input type="hidden" id="utm_medium" name="utm_medium" value="SEA" />
+        <input type="hidden" id="pays" name="pays" value="FR" />
+    </form>
+</div>
+
+<script type="text/javascript">
+    function formatFrenchPhoneNumber() {
+        // Get the input element and its value
+        const inputElement = document.getElementById('telephone');
+        const submitButton = document.querySelector('.form-client-btn-submit');
+        let phoneNumber = inputElement.value;
+
+        // Remove any non-digit characters
+        phoneNumber = phoneNumber.replace(/\D/g, '');
+
+        // Check if the number starts with '33' and replace it with '0' if needed
+        if (phoneNumber.startsWith('33')) {
+            phoneNumber = '0' + phoneNumber.substring(2);
+        }
+
+        // Validate the French phone number format
+        const validFrenchPhone = /^0[1-9][0-9]{8}$/;
+        if (!validFrenchPhone.test(phoneNumber)) {
+            // Disable the submit button
+            submitButton.disabled = true;
+
+            // Show error message
+            let errorMessage = document.getElementById('phone-error');
+            if (!errorMessage) {
+                errorMessage = document.createElement('div');
+                errorMessage.id = 'phone-error';
+                errorMessage.style.color = 'red';
+                inputElement.parentNode.appendChild(errorMessage);
+            }
+            errorMessage.textContent = "Numéro de téléphone non valide.";
+        } else {
+            // Enable the submit button
+            submitButton.disabled = false;
+
+            // Remove error message if exists
+            const errorMessage = document.getElementById('phone-error');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+        }
+
+        // Update the input value
+        inputElement.value = phoneNumber;
+    }
+
+    // Attach the function to the blur event
+    document.getElementById('telephone').addEventListener('blur', formatFrenchPhoneNumber);
+
+    function getUrlParameter(name) {
+        const url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        const results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const utmSource = getUrlParameter('utm_source');
+        if (utmSource) {
+            const hiddenField = document.getElementsByName('utm_source')[0];
+            if (hiddenField) {
+                hiddenField.value = utmSource;
+            }
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const mapping = {
+            "Assurance": "oGCx",
+            "Banque": "oGCx",
+            "Banque - Assurance": "oGCx",
+            "Banque - Gestion de patrimoine": "oGCx",
+            "Commerce - Vente": "oGCx",
+            "Commerce international": "oGCx",
+            "Commercial": "oGCx",
+            "Commercial - Relation client": "oGCx",
+            "Immobilier": "oGCx",
+            "Relation client": "oGCx",
+            "Relation client dans le tourisme": "oGCx",
+            "Retail": "oGCx",
+            "Retail - Point de vente": "oGCx",
+            "Retail & Point de vente": "oGCx",
+            "Sport Business": "oGCx",
+            "Tourisme": "oGCx",
+            "Animation": "P8OF",
+            "Animation - 3D - VFX": "P8OF",
+            "Bachelor Motion Designer": "P8OF",
+            "Business gaming": "P8OF",
+            "Code - Développement": "P8OF",
+            "Code - IT": "P8OF",
+            "Communication": "P8OF",
+            "Culture digitale - Logiciels métier": "P8OF",
+            "Data - IA": "P8OF",
+            "Design": "P8OF",
+            "Design & gaming": "P8OF",
+            "Design de mode": "P8OF",
+            "Design gaming": "P8OF",
+            "Design graphique et digital": "P8OF",
+            "Développement": "P8OF",
+            "Développeur": "P8OF",
+            "Digital - Communication": "P8OF",
+            "Digital Marketing - Communication": "P8OF",
+            "Digital Marketing & Communication": "P8OF",
+            "E-sport": "P8OF",
+            "Gaming": "P8OF",
+            "Infra - Sécurité": "P8OF",
+            "Marketing": "P8OF",
+            "Marketing - Communication": "P8OF",
+            "Programmation gaming": "P8OF",
+            "Comptabilité": "HXyC",
+            "Droit - Fiscalité": "HXyC",
+            "Finance - Comptabilité": "HXyC",
+            "Finance - Contrôle de gestion": "HXyC",
+            "Fiscalité": "HXyC",
+            "Gestion de projet": "HXyC",
+            "Gestion Paie": "HXyC",
+            "Hébergement - Management": "HXyC",
+            "Management": "HXyC",
+            "Management - Gestion": "HXyC",
+            "Management - Gestion de projet": "HXyC",
+            "Management - Secrétariat": "HXyC",
+            "Management - Stratégie d'entreprise": "HXyC",
+            "Management de projet": "HXyC",
+            "Management et marketing de la mode": "HXyC",
+            "Office management - Secrétariat": "HXyC",
+            "Politique RH - Recrutement": "HXyC",
+            "Ressources Humaines - Paie": "HXyC",
+            "RH - Paie": "HXyC",
+            "Social - Paie": "HXyC"
+        };
+        const selectElement = document.getElementById("thematique");
+        const hiddenElement = document.getElementById("campagne");
+        selectElement.addEventListener("change", function(event) {
+            const selectedValue = event.target.value;
+            const correspondingCampaign = mapping[selectedValue];
+            if (correspondingCampaign) {
+                hiddenElement.value = correspondingCampaign;
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const gclid = getURLParameter('gclid');
+        if (gclid) {
+            const hiddenGclidElement = document.getElementById('gclid') || document.getElementsByName('gclid')[0];
+
+            if (hiddenGclidElement) {
+                hiddenGclidElement.value = gclid;
+            }
+        }
+
+        const form = document.getElementById("form-catalog");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch("https://hook.eu1.make.com/dfdnp3k4ygufq467n52slpuanru1hfdf", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = "/lead-ok.html";
+                })
+                .catch((error) => {
+                    window.location.href = "/lead-ok.html";
+                });
+        });
+    });
+</script>

@@ -1,0 +1,61 @@
+{#
+
+"accordions": [
+    {
+        "title":"Qu'est-ce que l'épilation définitive ?",
+        "text":"L'épilation définitive est une technique permettant de se débarrasser de manière permanente des poils indésirables. Elle repose sur l'utilisation de différentes technologies telles que la lumière pulsée. Cette méthode permet d'obtenir une peau lisse et douce, sans avoir recours aux méthodes d'épilation classiques qui nécessitent une répétition régulière."
+    },
+    {
+        "title":"Épilation définitive par zone du corps",
+        "text":"<ul><li>Épilation définitive des jambes et des demi-jambes</li><li>Épilation définitive des aisselles</li><li>Épilation définitive du maillot : intégral, brésilien ou échancré</li><li>Épilation définitive du visage : moustache, lèvre supérieure, menton, joues</li><li>Épilation définitive du dos</li><li>Épilation définitive du torse</li><li>Épilation définitive des bras</li></ul>"
+    }
+],
+
+#}
+{% if variante.accordions %}
+<style>
+.accordion {
+    max-width: 100%;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: {% if variante.accordion_background_color %}{{ variante.accordion_background_color }}{% else %}white{% endif %};
+}
+
+.accordion-item {
+    border-bottom: 1px solid {% if variante.accordion_label_color %}{{ variante.accordion_label_color }}{% else %}black{% endif %};;
+}
+
+.accordion-label, .accordion-content{
+    padding: 14px 20px;
+}
+
+.accordion-label {
+    color: {% if variante.accordion_label_color %}{{ variante.accordion_label_color }}{% else %}black{% endif %};
+    font-weight: {% if variante.accordion_label_weight %}{{ variante.accordion_label_weight }}{% else %}bold{% endif %};
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+.accordion-label:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.accordion-content{
+    background: white;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+</style>
+<div class="accordion">
+    {% for accordion in variante.accordions %}
+    <details class="accordion-item">
+        <summary for="section_{{accordion_item_number}}" class="accordion-label">{{ accordion.title | safe }}</summary>
+        <div class="accordion-content">
+            {{ accordion.text | safe }}
+        </div>
+    </details>
+    {% endfor %}
+</div>
+{% endif %}

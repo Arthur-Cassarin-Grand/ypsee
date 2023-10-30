@@ -1,0 +1,70 @@
+{#
+
+JSON Template : 
+
+"args_puces": [
+    "<strong>Cessez de vous épiler</strong> pour de bon : profitez d'une peau lisse tous les jours.",
+    "<strong>Le résultat est permanent</strong> : économisez du temps et de l'argent sur le long terme.",
+    "Notre approche est <strong>sur-mesure</strong> : en fonction de votre peau et d'un <strong>avis médical sur place</strong>.",
+    "Nos tarifs sont <strong>transparents</strong> et <strong>sans surprise</strong> (<a href='#tarifs' style='color:#8D5524'>voir nos tarifs</a>)."
+],
+
+#}
+
+<style>
+    .puces {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .puce {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-right: 10px;
+    }
+
+    .puce_img {
+        padding-right: 1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .puce_text {
+        font-size: var(--p-font-size);
+        line-height: 1.5em;
+    }
+
+    /* Tablettes en orientation portrait */
+    @media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+        .puces {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+
+    /* Tablettes en orientation paysage */
+    @media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+        .puces {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+
+    /* Desktop et grands écrans */
+    @media (min-width: 1025px) {
+        .puces {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+</style>
+
+<div class="puces">
+    {% for puce in variante.args_puces %}
+        <div class="puce">
+            <img src="/img/puce.png" class="puce_img" alt="" />
+            <div class="puce_text">{{ puce | safe }}</div>
+        </div>
+    {% endfor %}
+</div>

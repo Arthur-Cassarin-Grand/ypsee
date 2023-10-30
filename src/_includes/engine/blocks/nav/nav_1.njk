@@ -1,0 +1,105 @@
+<style>
+    .menu {
+        display: grid;
+        gap: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+        box-shadow: 1px 1px 7px rgb(170, 170, 170);
+        background: var(--menu-background);
+        color: var(--normal-color);
+    }
+
+    .menu-logo {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .menu-baseline {
+        font-weight: 200;
+        line-height: 1.5em;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.1em;
+        color: var(--reversed-color);
+    }
+
+    .menu-cta {
+        margin-top: 1.5rem;
+    }
+
+    .menu-cta-button {
+        background: var(--primary-color);
+        padding: 15px 20px;
+        color: white;
+        font-weight: bold;
+        border-radius: 25px;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+    .menu-cta-button:hover { cursor: pointer; }
+
+    .menu > :last-child {
+        padding-bottom: 1.5rem;
+    }
+
+    /* Tablettes en orientation portrait */
+    @media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+        .menu-baseline {
+            font-size: 1.2em;
+        }
+    }
+
+    /* Tablettes en orientation paysage */
+    @media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+        .menu-baseline {
+            font-size: 1.2em;
+        }
+    }
+
+    /* Desktop et grands écrans */
+    @media (min-width: 1025px) {
+        .menu {
+            grid-template-columns: 1fr 2fr 1fr;
+            align-content: center;
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        .menu-logo {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-self: center;
+        }
+
+        .menu-baseline {
+            font-size: 1.3em;
+        }
+
+        .menu-cta {
+            margin-top: 0;
+        }
+
+        .menu > :last-child {
+            padding-bottom: 0;
+        }
+    }
+</style>
+
+<nav class="menu" id="menu">
+    <div class="menu-logo">
+        <img src="/img/{% if variante.logo %}{{ variante.logo }}{% else %}{{ default_logo_img }}{% endif %}" style="width:150px" alt="" />
+    </div>
+    <div class="menu-baseline">
+        <a href="#form" class="invisible-link" data-tracked="click_baseline">{% if variante.baseline %}{{ variante.baseline | safe }}{% else %}{{ default_baseline | safe }}{% endif %}</a>
+    </div>
+    <div class="menu-cta">
+        <a href="#form" class="menu-cta-button" data-tracked="click_voir_brochure_menu">{{ variante.cta_btn_form_nav }}</a>
+    </div>
+</nav>

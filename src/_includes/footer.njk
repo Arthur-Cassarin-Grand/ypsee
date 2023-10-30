@@ -1,0 +1,38 @@
+<style>
+    footer {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        box-shadow: 2px 2px 5px rgb(128, 128, 128);
+    }
+
+    footer .footer-links {
+        display: grid;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    footer .footer-links a {
+
+    }
+
+    footer a {
+        color: var(--diminished-color);
+        text-decoration: none;
+        font-size: var(--footer-p-font-size);
+    }
+
+    footer a:visited, footer a:hover {
+        color: var(--diminished-color);
+    }
+</style>
+
+<footer>
+    <div class="align-center"><img src="/img/{% if variante.logo %}{{ variante.logo }}{% else %}{{ default_logo_img }}{% endif %}" style="width:100px" alt="" />
+        <br /><br />
+        <div class="footer-links">
+            <div><a href="/mentions.html">Mentions légales</a></div>
+            <div><a href="/confidentialite.html">Politique de confidentialité</a></div>
+        </div>
+        <span style="color: var(--normal-color)">Coypright © 2019-2023 Formation Sup.</span>
+    </div>
+</footer>

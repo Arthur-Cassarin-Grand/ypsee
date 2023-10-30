@@ -1,0 +1,53 @@
+{#
+    <a href="" data-tracked="my_ga4_event">Thing to track with GA4</a>
+#}
+<script type="text/javascript">
+    function send_ga4_event(event_name) {
+        gtag('event', event_name, {
+            'send_to': '{{ ga4_tag }}'
+        });
+    }
+
+    var max_scroll = 0;
+    var scroll_75 = false;
+    var scroll_50 = false;
+    var scroll_25 = false;
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+        var tracked_elements = document.querySelectorAll('[data-tracked]');
+        tracked_elements.forEach(function(tracked_element) {
+            tracked_element.addEventListener('click', function() {
+                var ga4_event = this.getAttribute('data-tracked');
+                send_ga4_event(ga4_event);
+            })
+        })
+
+        window.addEventListener('scroll', function() {
+            var h = document.documentElement, 
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+
+            var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+            if (percent > max_scroll) {
+                max_scroll = percent;
+                if (percent > 75) {
+                    if (!scroll_75) {
+                        send_ga4_event("scroll_75");
+                        scroll_75 = true;
+                    }
+                } else if (percent > 50) {
+                    if (!scroll_50) {
+                        send_ga4_event("scroll_50");
+                        scroll_50 = true;
+                    }
+                } else if (percent > 25) {
+                    if (!scroll_25) {
+                        send_ga4_event("scroll_25");
+                        scroll_25 = true;
+                    }
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+function getScoring(form, scoring=50) {
+    Array.from(form.elements).forEach((element) => {
+        if (typeof(element) != "button" && element.getAttribute("type") != "button") {
+            if (element.hasAttribute('data-score') || element.hasAttribute('data-score-dynamic')) {
+                if (element.getAttribute("type") == "checkbox" || element.getAttribute("type") == "radio") {
+                    if (element.checked) {
+                        scoring += parseInt(element.getAttribute('data-score'));
+                    }
+                } 
+                
+                else if (element.getAttribute("type") == "number") {
+                    if (element.hasAttribute('data-score-dynamic')) {
+                        scoring += parseInt(element.value);
+                    } else {
+                        scoring += parseInt(element.getAttribute('data-score'));
+                    }
+                }
+                
+                else {
+                    scoring += parseInt(element.getAttribute('data-score'));
+                }
+            }
+        }
+    });
+    if(scoring < 0) { scoring = 0; }
+    return scoring;
+}
+</script>

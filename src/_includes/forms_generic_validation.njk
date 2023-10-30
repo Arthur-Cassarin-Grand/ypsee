@@ -1,0 +1,64 @@
+{#
+    CHAMPS GÉNÉRIQUES
+
+    code_postal : vérifie sans hors zone, configurer les départements dans "codes_postaux_ok" de chaque variante. Mettre "*" pour tout autoriser.
+    mail
+    phone : vérifie que le téléphone soit bien formatté. Empêche la vérification si ne commence pas par 06 ou 07.
+    code_sms : vérifie que le code SMS soit correct.
+
+    ÉLÉMENTS UTILES
+
+    err_code_postal_hors_zone : "Hors-zone : nous n'intervenons pas dans votre département."
+    err_phone_invalide : "Votre téléphone n'est pas valide"
+    indication_validation_sms : "Merci de valider votre numéro de téléphone avant de soumettre votre demande"
+
+    form_submit_loader : loader spinner
+#}
+
+<script type="text/javascript">
+{% include "engine/forms/base.js" %}
+{% include "engine/forms/helpers.js" %}
+{% include "engine/forms/hors_zone.js" %}
+{% include "engine/forms/sms_validation.js" %}
+
+function valider_formulaire() {
+    event.preventDefault();
+    {% include "engine/forms/verify_required_fields.js" %}
+    var final_score = document.forms['form_client']['superficie'].value;
+    {% include "engine/forms/base_valider_formulaire.js" %}
+
+    if (document.forms['form_client']['url'].value == "") {
+        if (document.forms['form_client']['verif_sms_status'].value == 'true') {
+            if (DEBUG) {
+                console.log("FORMULAIRE ENVOYE");
+                console.log(form_data_json);
+                console.log("SCORE : " + getScoring(document.forms.form_client, {{ gads_leads_tracking_base_value }}));
+            } else {
+                axios.post('{{ variante.webhook_lead_client }}', {
+                    form: form_data_json,
+                    date: final_date,
+                    id: final_id,
+                    score: final_score
+                })
+                .then(function (response) {
+                    var final_url = "/lead-ok.html?phone=" + final_tel_client + "&mail=" + final_mail_client + "&score=" + final_score;
+                    window.location.replace(final_url);
+                })
+                .catch(function (error) {
+            
+                });
+            }
+        } else {
+
+        }
+    }
+}
+
+{% include "engine/forms/unwanted_fields.js" %}
+
+document.getElementsByName('code_postal')[0].addEventListener('focusout', est_hors_zone);
+document.getElementsByName('validation_code_sms')[0].addEventListener('click', valider_telephone);
+document.getElementsByName('valider_code_sms')[0].addEventListener('click', valider_code_sms);
+document.querySelector('#phone').addEventListener('focusout', tel_eligible_validation_sms);
+form_client.addEventListener('submit', valider_formulaire);
+</script>

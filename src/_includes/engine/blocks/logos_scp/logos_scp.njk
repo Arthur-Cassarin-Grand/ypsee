@@ -1,0 +1,49 @@
+{#
+"logos_scp_list": [
+    {"name":"figaro"},
+    {"name":"parisien"},
+    {"name":"echos"},
+    {"name":"capital"}
+]
+#}
+<style>
+    .logos_scp {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 4rem;
+    }
+
+    .logo_scp img {
+        max-width: 100%;
+    }
+
+    /* Tablettes en orientation portrait */
+    @media (min-width: 600px) and (max-width: 899px) and (orientation: portrait) {
+        .logos_scp {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* Tablettes en orientation paysage */
+    @media (min-width: 600px) and (max-width: 899px) and (orientation: landscape) {
+        .logos_scp {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    /* Desktop et grands écrans */
+    @media (min-width: 900px) {
+        .logos_scp {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+</style>
+{% if variante.logos_scp_list %}
+<div class="logos_scp align-center">
+    {% for logo_scp in variante.logos_scp_list %}
+    <div class="logo_scp">
+        <img src="/img/logos_scp/{{ logo_scp.name }}.png" alt="" />
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,20 @@
+<div id="available">
+    <div class="available_img"><img src="/img/{{ variante.agent_img }}_present.png" alt="Agent" id="agent_connecte" /></div>
+    <div class="available_text">{{ variante.agent_name }} est <strong id="agent_status">disponible</strong><span id="heure_verif">()</span>.<br /><br /><span id="agent_status_text">{% if variante.agent_status_present_text %}{{ variante.agent_status_present_text }}{% else %}{% if variante.agent_sexe == 'male' %}Il{% else %}Elle{% endif %} vous rappellera quelques minutes après l'envoi de votre demande.{% endif %}</span></div>
+    <script type="text/javascript">
+        var heure_courante = new Date().getHours();
+        var minute_courante = new Date().getMinutes();
+        if (heure_courante > {{ agent_status_fin_jour_ouvre }} || heure_courante < {{ agent_status_debut_jour_ouvre }}) {
+            {% if hide_agent_if_absent == true %}
+            document.getElementById("available").style.display = "none";
+            {% else %}
+            document.getElementById("agent_connecte").src = "/img/{{ variante.agent_img }}_absent.png";
+            document.getElementById("agent_status").textContent = "{% if variante.agent_sexe == 'male' %}absent{% else %}absente{% endif %}";
+            document.getElementById("agent_status_text").textContent = "{% if variante.agent_status_absent_text %}{{ variante.agent_status_absent_text }}{% else %}{% if variante.agent_sexe == 'male' %}Il{% else %}Elle{% endif %} vous recontactera à partir de 09:00.{% endif %}";
+            {% endif %}
+        }
+        if (heure_courante < 10) { heure_courante = "0" + heure_courante; }
+        if (minute_courante < 10) { minute_courante = "0" + minute_courante; }
+        document.getElementById("heure_verif").textContent = " (" + heure_courante + "h" + minute_courante + ")";
+    </script>
+</div>

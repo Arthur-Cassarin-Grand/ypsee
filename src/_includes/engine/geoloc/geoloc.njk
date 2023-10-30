@@ -1,0 +1,16 @@
+<script type="module">
+    // Variable à utiliser : <span class='city_name'></span>
+    async function replaceNameCity(class_name) {
+        let res = await axios.get('/geoloc').then((response) => {
+            let city = "";
+            if (response.data.geo.city === undefined) { city = "{{ variante.ville_defaut }}" } else { city = response.data.geo.city; }
+            let cityElements = document.getElementsByClassName(class_name);
+            for (let i = 0; i < cityElements.length; i++) { 
+                cityElements[i].innerText = city; 
+            }
+        }).catch((err) => console.log(err));
+    }
+    window.addEventListener("DOMContentLoaded", (event) => {
+        replaceNameCity('city_name');
+    });
+</script>

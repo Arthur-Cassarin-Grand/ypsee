@@ -1,0 +1,9 @@
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDOvNP_sxnK4C96b6TlGe7p4E4twopok6Y"></script>
+<input type="text" class="pure-input-1" name="adresse_local" id="adresse_local" placeholder="{% if variante.placeholder_adress %}{{ variante.placeholder_adress }}{% else %}Adresse{% endif %}" required /><br >
+<script type="text/javascript">
+    const input = document.getElementById("adresse_local");
+    const options = {
+        componentRestrictions: { country: {% if variante.adress_autocomplete_countries %}{{ variante.adress_autocomplete_countries }}{% else %}"fr"{% endif %} },
+    };
+    const autocomplete = new google.maps.places.Autocomplete(input, options);
+</script>
