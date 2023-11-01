@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
     // Default site theme's
     eleventyConfig.addGlobalData("default_logo_img", "ypsee2.svg");
     eleventyConfig.addGlobalData("default_logo_width", "100"); // In %
-    eleventyConfig.addGlobalData("default_baseline", "Formations diplomantes, de chez vous, <strong>finançables jusqu'à 100%</strong>");
+    eleventyConfig.addGlobalData("default_baseline", "Numéro 1 français des <strong>soins dentaires en Hongrie</strong> depuis 2007");
 
     // TRACKING
     // Balise GA4 + Google Ads
