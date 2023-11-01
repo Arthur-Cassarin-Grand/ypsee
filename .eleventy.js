@@ -18,10 +18,10 @@ module.exports = function (eleventyConfig) {
 
     // TRACKING
     // Balise GA4 + Google Ads
-    eleventyConfig.addGlobalData("ga4_tag", "G-3WQF0XCVY1"); // Utilisé pour GA4 et comme balise principale
-    eleventyConfig.addGlobalData("gads_tracking_id", "11361689811"); // Utilisé pour la balise de conversion (identique pour toutes les convs)
+    eleventyConfig.addGlobalData("ga4_tag", "G-W1T6109B33"); // Utilisé pour GA4 et comme balise principale
+    eleventyConfig.addGlobalData("gads_tracking_id", "11017903548"); // Utilisé pour la balise de conversion (identique pour toutes les convs)
     // RAPPEL POUR FORMULAIRES : dans la TYP, ces paramètres GET doivent être présents : phone, mail, rid, score
-    eleventyConfig.addGlobalData("gads_valid_leads_tracking_label", "QScgCPrSx-gYENPB1qkq"); // For GOOD leads
+    eleventyConfig.addGlobalData("gads_valid_leads_tracking_label", "Qm-pCJTm5PIYELy734Up"); // For GOOD leads
     eleventyConfig.addGlobalData("gads_not_valid_leads_tracking_label", ""); // For BAD leads
     eleventyConfig.addGlobalData("gads_leads_tracking_base_value", "50"); // must be decimal
     eleventyConfig.addGlobalData("allow_only_score_gt", 0); // Track leads submissions with GET "score" > to X

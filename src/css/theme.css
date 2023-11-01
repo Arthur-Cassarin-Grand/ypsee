@@ -8,7 +8,7 @@
   --font-name: "Ubuntu";
   --menu-background: #FAF9F6;
   --font-color-nav: white;
-  --form-box-background: rgba(99, 166, 212, 0.75);
+  --form-box-background: white;
   --h1-font-size: 2em;
   --h2-font-size: 1.8em;
   --h3-font-size: 1.7em;
@@ -92,7 +92,6 @@ body {
 .content p {
   font-size: var(--p-font-size);
   color: var(--normal-color);
-  font-weight: 300;
   line-height: 1.5em;
 }
 
@@ -160,7 +159,7 @@ header {
   margin-right: 1rem;
 }
 
-header::before {
+/* header::before {
   content: "";
   position: absolute;
   top: 0;
@@ -175,7 +174,7 @@ header::before {
   background-repeat: no-repeat;
   padding-bottom: 70rem;
   z-index: -1;
-}
+} */
 
 
 /* Tablettes en orientation portrait */
@@ -189,7 +188,7 @@ header::before {
     margin-bottom: 4rem;
   }
 
-  header::before {
+  /* header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -203,7 +202,7 @@ header::before {
     background-repeat: no-repeat;
     padding-bottom: 35rem;
     z-index: -1;
-  }
+  } */
 
   .form-container {
     gap: 4rem;
@@ -221,7 +220,7 @@ header::before {
     margin-bottom: 4rem;
   }
 
-  header::before {
+  /* header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -235,7 +234,7 @@ header::before {
     background-repeat: no-repeat;
     padding-bottom: 25rem;
     z-index: -1;
-  }
+  } */
 
   .form-container {
     gap: 4rem;
@@ -262,7 +261,7 @@ header::before {
     margin-bottom: 2rem;
   }
 
-  header::before {
+  /* header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -276,7 +275,7 @@ header::before {
     background-repeat: no-repeat;
     padding-bottom: 10rem;
     z-index: -1;
-  }
+  } */
 
   .form-container {
     grid-template-columns: 2fr 1fr;
@@ -301,7 +300,7 @@ header::before {
     margin-bottom: 4rem;
   }
 
-  header::before {
+  /* header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -315,7 +314,7 @@ header::before {
     background-repeat: no-repeat;
     padding-bottom: 6rem;
     z-index: -1;
-  }
+  } */
 
   .form-container {
     grid-template-columns: 2fr 1fr;
