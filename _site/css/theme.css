@@ -1,0 +1,382 @@
+:root {
+  --primary-color: #63A6D4;
+  --secondary-color: #069719;
+  --normal-color: #383536;
+  --reversed-color: #010101;
+  --diminished-color: rgb(94, 94, 94);
+  --alternate-color: rgba(99, 166, 212, 0.3);
+  --font-name: "Ubuntu";
+  --menu-background: #FAF9F6;
+  --font-color-nav: white;
+  --form-box-background: white;
+  --h1-font-size: 2em;
+  --h2-font-size: 1.8em;
+  --h3-font-size: 1.7em;
+  --form-title-font-size: 1.4em;
+  --p-font-size: 1.2em;
+  --baseline-font-size: 1.5rem;
+  --baseline-font-size-mobile: 1.1rem;
+  --footer-p-font-size: 0.9em;
+  --footer-a-font-size: 0.8em;
+  --puce-img-size: 5%;
+}
+
+html {
+  font-family: var(--font-name);
+  scroll-behavior: smooth;
+  background-color: #FAF9F6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.alternate-background {
+  background-color: var(--alternate-color);
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.form-container {
+  margin-top: 1rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.form-title-container {
+  margin-bottom: 2rem;
+}
+
+.form-client {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow: hidden;
+}
+
+/* ----- TITRES ----- */
+
+.content h1 {
+  font-size: var(--h1-font-size);
+  line-height: 1.3em;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+
+.content h2 {
+  font-size: var(--h2-font-size);
+  line-height: 1.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.content h3 {
+  font-size: var(--h3-font-size);
+  color: #8D5524;
+}
+
+.content h4 {
+  font-size: var(--h3-font-size);
+  font-weight: 200;
+  color: #8D5524;
+  text-align: center;
+}
+
+/* ----- PARAGRAPHES ----- */
+
+.content p {
+  font-size: var(--p-font-size);
+  color: var(--normal-color);
+  line-height: 1.5em;
+}
+
+.content strong {
+  font-weight: 500;
+}
+
+.content li {
+  font-size: var(--p-font-size);
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+
+.content .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--reversed-color);
+  padding: 30px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px rgb(128, 128, 128);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cta-btn-secondary {
+  background-color: var(--normal-color);
+  color: white;
+  padding: 30px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px rgb(128, 128, 128);
+  border-radius: 20px;
+}
+
+/* ----- SECTIONS ----- */
+
+header {
+  margin-bottom: 4rem;
+}
+
+/* ----- box_form ----- */
+
+.form-title {
+  font-size: var(--form-title-font-size);
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-box {
+  background-color: var(--form-box-background);
+  color: var(--normal-color);
+  box-shadow: 2px 2px 5px rgb(128, 128, 128);
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.mozaique-container {
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+.page-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  opacity: 0.15;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 12px ), repeating-linear-gradient( var(--primary-color), var(--secondary-color));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 70rem;
+  z-index: -1;
+} */
+
+
+/* Tablettes en orientation portrait */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+  .page-container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  header {
+    margin-bottom: 4rem;
+  }
+
+  /* header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.15;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 35rem;
+    z-index: -1;
+  } */
+
+  .form-container {
+    gap: 4rem;
+  }
+}
+
+/* Tablettes en orientation paysage */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+  .page-container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  header {
+    margin-bottom: 4rem;
+  }
+
+  /* header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.15;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 25rem;
+    z-index: -1;
+  } */
+
+  .form-container {
+    gap: 4rem;
+  }
+
+  .review {
+    grid-template-columns: 1fr 2fr;
+  }
+
+}
+
+/* Desktop et grands écrans */
+@media (min-width: 1025px) and (max-width: 1392px) {
+  .page-container {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .form-container {
+    gap: 4rem;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  /* header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.15;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 10rem;
+    z-index: -1;
+  } */
+
+  .form-container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .review {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 1393px) {
+  .page-container {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .form-container {
+    gap: 4rem;
+  }
+
+  header {
+    margin-bottom: 4rem;
+  }
+
+  /* header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.15;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 6rem;
+    z-index: -1;
+  } */
+
+  .form-container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .review {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Helper */
+
+/* Page container */
+
+.emphasis-background-color {
+  background-color: var(--primary-color);
+  color: var(--reversed-color);
+  padding: 5px;
+}
+
+.emphasis-text-color {
+  color: var(--secondary-color);
+}
+
+.align-center {
+  text-align: center;
+}
+
+.vertical-align {
+  vertical-align: middle !important;
+}
+
+.round {
+  border-radius: 180px;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.invisible-link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+/* ----- MEDIA ----- */
+
+/* Tablettes en orientation portrait */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+
+}
+
+/* Tablettes en orientation paysage */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* Desktop et grands écrans */
+@media (min-width: 1025px) and (max-width: 1392px) {
+
+}
+
+@media (min-width: 1393px) {
+
+}
