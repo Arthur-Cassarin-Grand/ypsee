@@ -146,12 +146,12 @@
             }
 
             .form-title {
-            font-size: 3.5em;
-            line-height: 1.2;
-            color: var(--normal-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+                font-size: 3.5em;
+                line-height: 1.2;
+                color: var(--normal-color);
+                margin-bottom: 1.5rem;
+                font-weight: 700;
+                letter-spacing: -0.02em;
             }
 
             .form-subtitle {
@@ -171,28 +171,49 @@
             }
 
             .emphasis-text-color {
-            color: var(--secondary-color);
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
+                color: var(--secondary-color);
+                font-weight: 700;
+                position: relative;
+                display: inline-block;
+                background: linear-gradient(120deg, rgba(6, 151, 25, 0.1) 0%, rgba(6, 151, 25, 0.05) 100%);
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+            }
+
+            .emphasis-text-color::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background: var(--secondary-color);
+                border-radius: 4px;
             }
 
             .emphasis-text-color::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--secondary-color);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
+                display: none;
             }
 
-            .emphasis-text-color:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
+            @media (max-width: 768px) {
+                .form-title {
+                    font-size: 2em;
+                    padding: 0 1rem;
+                }
+
+                .emphasis-text-color {
+                    padding: 0.25rem 0.75rem;
+                }
+            }
+
+            .title-highlight {
+                color: var(--primary-color);
+                font-weight: 500;
+                font-size: 1.2em;
+                display: block;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
             }
 
             .pictos {
@@ -877,9 +898,10 @@
     <div class=form-container>
         <div>
             <div class=form-title-container>
-                <h1 class=form-title><span class=emphasis-text-color>25 000 FRANÇAIS CHOISISSENT UNE CLINIQUE DENTAIRE EN HONGRIE CHAQUE ANNÉE</span></h1>
+                <span class="title-highlight">Clinique dentaire à Budapest, en Hongrie</span>
+                <h1 class=form-title><span class=emphasis-text-color>Nous organisons vos soins dentaires en Hongrie</span></h1>
                 <h2 class=form-subtitle>Économisez jusqu'à 60% sur votre intervention<br/>avec des soins dentaires d'aussi bonne qualité qu'en France</h2>
-                <p class=form-lead>Rien de plus simple : il suffit de demander un devis personnalisé. <strong>Notre équipe s'occupera ensuite de tout</strong> : organisation du voyage, accompagnement, suivi post-opératoire et demande de <strong>remboursement par la Sécurité Sociale française</strong>.</p><p class=form-lead>Pas besoin de parler anglais, <strong>nos chirurgiens-dentistes parlent couramment français</strong> !</p>
+                <p class=form-lead><strong>Notre équipe s'occupe de tout</strong> : organisation de votre voyage à Budapest, accompagnement lors de l'opération, suivi post-opératoire et assistance lors de la demande de <strong>remboursement par la Sécurité Sociale française</strong>.</p><p class=form-lead>Pas besoin de parler anglais, <strong>nos chirurgiens-dentistes parlent couramment français</strong> !</p>
                 
                 <div class="mobile-cta" style="display: none;">
                     <a href="#form" class="menu-cta-button" data-tracked="click_cta_intro" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 2rem;">
@@ -1154,6 +1176,13 @@
             <img src="img/Xguide-technologie.png" alt="Technologie Xguide pour implants dentaires" loading="lazy">
         </div>
     </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="#form" class="menu-cta-button" data-tracked="click_cta_mosaic" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.1em; padding: 1rem 2rem;">
+            <span class="material-symbols-rounded">calculate</span>
+            Demander votre devis
+        </a>
+    </div>
 </section>
 
 <section class=page-container>
@@ -1337,7 +1366,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
             </div>
             <div style="display: flex; align-items: center; gap: 0.5rem;">
                 <span class="material-symbols-rounded" style="color: var(--primary-color);">workspace_premium</span>
-                <span style="color: var(--diminished-color); font-size: 0.9em;">Membre de la Chambre des chirurgiens-dentistes</span>
+                <span style="color: var(--diminished-color); font-size: 0.9em;">Membre de la Chambre des chirurgiens-dentistes Hongroise</span>
             </div>
         </div>
     </div>
