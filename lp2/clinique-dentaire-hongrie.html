@@ -75,16 +75,16 @@
             }
 
             .menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-unit);
-            background: rgba(250, 249, 246, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 999;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: var(--spacing-unit);
+                background: rgba(250, 249, 246, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                position: sticky;
+                top: 0;
+                z-index: 999;
             }
 
             .menu-logo {
@@ -330,42 +330,52 @@
             }
 
             .logos_scp {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+                margin: 2rem auto;
+                padding: 2rem;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: var(--border-radius);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                max-width: var(--container-width);
             }
 
             .logo_scp {
-            flex: 1 1 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem;
-            transition: var(--transition);
-            max-width: 300px;
-            }
-
-            .logo_scp:hover {
-            transform: scale(1.05);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
             }
 
             .logo_scp img {
-            max-width: 100%;
-            height: auto;
-            filter: grayscale(100%);
-            transition: var(--transition);
+                max-width: 100%;
+                height: auto;
+                filter: grayscale(100%);
+                transition: var(--transition);
             }
 
             .logo_scp img:hover {
-            filter: grayscale(0%);
+                filter: grayscale(0%);
+                transform: scale(1.05);
+            }
+
+            @media (max-width: 768px) {
+                .logos_scp {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                    padding: 1.5rem;
+                    margin: 1.5rem auto;
+                }
+
+                .logo_scp {
+                    padding: 0.5rem;
+                }
+
+                .logo_scp img {
+                    max-width: 120px;
+                    margin: 0 auto;
+                }
             }
 
             footer {
@@ -788,6 +798,61 @@
                     padding: 0 1.5rem;
                 }
             }
+
+            @media (max-width: 768px) {
+                .menu {
+                    position: relative;
+                    padding: 1rem;
+                }
+
+                .menu-baseline {
+                    margin-bottom: 1.5rem;
+                }
+
+                .menu-cta {
+                    margin-top: 1rem;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .menu-cta-button {
+                    width: 100%;
+                    max-width: 300px;
+                    text-align: center;
+                    padding: 1rem;
+                }
+
+                .menu-logo {
+                    margin-bottom: 1rem;
+                }
+
+                .form-title-container {
+                    margin-bottom: 2.5rem;
+                }
+
+                .menu-baseline {
+                    padding: 0 1rem;
+                    text-align: center;
+                    line-height: 1.4;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .mobile-cta {
+                    display: flex !important;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0 1.5rem;
+                }
+                
+                .mobile-cta .menu-cta-button {
+                    width: 100%;
+                    max-width: 300px;
+                    padding: 1rem;
+                    font-size: 1.1em;
+                }
+            }
         </style>
     
     <script>!function(e,t,n,c,o,a){e.fbq||(c=e.fbq=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},e._fbq||(e._fbq=c),(c.push=c).loaded=!0,c.version="2.0",c.queue=[],(o=t.createElement(n)).async=!0,o.src="https://connect.facebook.net/en_US/fbevents.js",(a=t.getElementsByTagName(n)[0]).parentNode.insertBefore(o,a))}(window,document,"script"),fbq("init","164837086690706"),fbq("track","PageView")</script>
@@ -815,6 +880,13 @@
                 <h1 class=form-title><span class=emphasis-text-color>ÉCONOMISEZ JUSQU'À 60%<br>SUR VOTRE OPÉRATION DENTAIRE</span></h1>
                 <h2 class=form-subtitle>La solution dentaire préférée des Français en Hongrie</h2>
                 <p class=form-lead>Comme <strong>25 000 français chaque année</strong>, réalisez votre intervention dentaire en Hongrie, pour une <strong>qualité de soins égale ou supérieure</strong>. <strong>Ypsée s'occupe de tout</strong> : organisation du voyage, accompagnement et suivi post-opératoire.</p>
+                
+                <div class="mobile-cta" style="display: none;">
+                    <a href="#form" class="menu-cta-button" data-tracked="click_cta_intro" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 2rem;">
+                        <span class="material-symbols-rounded">calculate</span>
+                        Je demande un devis
+                    </a>
+                </div>
             </div>
             
             <div class="two-columns">
@@ -887,14 +959,14 @@
                     </a>
 </div>
 
-                <div>
+                <div id="form">
                     <div class="form-box form-dark" id="form-box">
                         <div class="form-header">
                             <span class="material-symbols-rounded form-icon">medical_services</span>
                             <h3 class="form-box-title">Demandez votre devis personnalisé</h3>
                             <p class="form-box-subtitle">Un chirurgien-dentiste vous rappelle sous 24h</p>
                         </div>
-                        <div class="form-iframe-container">
+                        <div class="form-iframe-container" >
                             <iframe data-tally-src="https://tally.so/embed/3q588g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="394" frameborder="0" marginheight="0" marginwidth="0" title="Ypsée V2"></iframe>
                             <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
                         </div>
@@ -1241,18 +1313,18 @@ document.querySelectorAll('.faq-question').forEach(question => {
         <!-- Colonne Soins -->
         <div style="display: flex; flex-direction: column; gap: 1rem;">
             <h3 style="color: var(--primary-color); font-size: 1.2em; margin-bottom: 0.5rem;">Nos soins</h3>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Implant dentaire</a>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Couronne dentaire</a>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Bridge dentaire</a>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Facette dentaire</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Implant dentaire</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Couronne dentaire</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Bridge dentaire</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Facette dentaire</a>
         </div>
 
         <!-- Colonne Informations -->
         <div style="display: flex; flex-direction: column; gap: 1rem;">
             <h3 style="color: var(--primary-color); font-size: 1.2em; margin-bottom: 0.5rem;">Informations</h3>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Qui sommes-nous ?</a>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Nos garanties</a>
-            <a href="#" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Témoignages</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Qui sommes-nous ?</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Nos garanties</a>
+            <a href="#form" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Témoignages</a>
             <a href="https://www.ypsee.com/mentions-legales/" style="color: var(--diminished-color); text-decoration: none; transition: var(--transition);">Mentions légales</a>
         </div>
 
@@ -1276,13 +1348,6 @@ document.querySelectorAll('.faq-question').forEach(question => {
     </div>
 </footer>
         </main>
-        
-<script>function send_ga4_event(e){gtag("event",e,{send_to:"G-W1T6109B33"})}var max_scroll=0,scroll_75=!1,scroll_50=!1,scroll_25=!1;window.addEventListener("DOMContentLoaded",e=>{document.querySelectorAll("[data-tracked]").forEach(function(e){e.addEventListener("click",function(){send_ga4_event(this.getAttribute("data-tracked"))})}),window.addEventListener("scroll",function(){var e=document.documentElement,l=document.body,t="scrollTop",n="scrollHeight",t=(e[t]||l[t])/((e[n]||l[n])-e.clientHeight)*100;max_scroll<t&&(75<(max_scroll=t)?scroll_75||(send_ga4_event("scroll_75"),scroll_75=!0):50<t?scroll_50||(send_ga4_event("scroll_50"),scroll_50=!0):25<t&&(scroll_25||(send_ga4_event("scroll_25"),scroll_25=!0)))})})</script>
-        <script>!function(t,e,n,c,a,r){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},(a=e.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/j5g8xuuncg",(r=e.getElementsByTagName(c)[0]).parentNode.insertBefore(a,r)}(window,document,"clarity","script")</script>
-
-    
-
-</script>        </main>
         
 <script>function send_ga4_event(e){gtag("event",e,{send_to:"G-W1T6109B33"})}var max_scroll=0,scroll_75=!1,scroll_50=!1,scroll_25=!1;window.addEventListener("DOMContentLoaded",e=>{document.querySelectorAll("[data-tracked]").forEach(function(e){e.addEventListener("click",function(){send_ga4_event(this.getAttribute("data-tracked"))})}),window.addEventListener("scroll",function(){var e=document.documentElement,l=document.body,t="scrollTop",n="scrollHeight",t=(e[t]||l[t])/((e[n]||l[n])-e.clientHeight)*100;max_scroll<t&&(75<(max_scroll=t)?scroll_75||(send_ga4_event("scroll_75"),scroll_75=!0):50<t?scroll_50||(send_ga4_event("scroll_50"),scroll_50=!0):25<t&&(scroll_25||(send_ga4_event("scroll_25"),scroll_25=!0)))})})</script>
         <script>!function(t,e,n,c,a,r){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},(a=e.createElement(c)).async=1,a.src="https://www.clarity.ms/tag/j5g8xuuncg",(r=e.getElementsByTagName(c)[0]).parentNode.insertBefore(a,r)}(window,document,"clarity","script")</script>
