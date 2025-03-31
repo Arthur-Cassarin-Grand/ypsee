@@ -127,20 +127,20 @@
             .page-container {
             max-width: var(--container-width);
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
             width: 100%;
             }
 
             .form-container {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 1rem;
             width: 100%;
             }
 
             .form-title-container {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             width: 100%;
             }
@@ -166,7 +166,7 @@
             line-height: 1.6;
             color: var(--normal-color);
             max-width: 900px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 2rem;
             text-align: center;
             }
 
@@ -196,16 +196,14 @@
             }
 
             .pictos {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 2rem;
-            justify-content: center;
-            margin: 3rem 0;
             width: 100%;
+            margin-bottom: 2rem;
             }
 
             .picto {
-            flex: 1 1 300px;
             text-align: center;
             padding: 2.5rem;
             background: rgba(255, 255, 255, 0.95);
@@ -215,7 +213,6 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            max-width: 400px;
             }
 
             .picto::before {
@@ -255,10 +252,11 @@
             }
 
             .puces {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 1.5rem;
             width: 100%;
+            margin: 2rem 0;
             }
 
             .puce {
@@ -271,7 +269,13 @@
             border-radius: var(--border-radius);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: var(--transition);
-            width: 100%;
+            }
+
+            @media (min-width: 768px) {
+                .puces {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                }
             }
 
             .puce:hover {
@@ -330,7 +334,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 3rem;
-            margin: 3rem 0;
+            margin: 2rem 0;
             padding: 3rem;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -366,8 +370,8 @@
 
             footer {
             background: white;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
+            padding: 2rem;
+            margin-top: 2rem;
             box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
             }
 
@@ -434,7 +438,7 @@
             }
 
             .pictos {
-                flex-wrap: nowrap;
+                grid-template-columns: 1fr 1fr;
             }
 
             .puces {
@@ -453,7 +457,7 @@
             }
             
             .page-container {
-                padding: var(--section-padding) 4rem;
+                padding: 2rem;
             }
             }
 
@@ -525,14 +529,189 @@
             .two-columns {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                margin: 3rem 0;
+                gap: 2rem;
+                margin: 2rem 0;
+                align-items: start;
+            }
+
+            .two-columns > div {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .form-header {
+                text-align: center;
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .form-icon {
+                font-size: 3em !important;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                background: rgba(255,255,255,0.1);
+                padding: 1rem;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            .form-box-title {
+                font-size: 1.8em;
+                color: var(--primary-color);
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+            }
+
+            .form-box-subtitle {
+                font-size: 1.1em;
+                color: var(--normal-color);
+                opacity: 0.9;
+            }
+
+            .form-box.form-dark {
+                background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+                color: white;
+            }
+
+            .form-box.form-dark .form-box-title {
+                color: white;
+            }
+
+            .form-box.form-dark .form-box-subtitle {
+                color: rgba(255,255,255,0.9);
+            }
+
+            .form-box.form-dark .form-icon {
+                color: white;
+                background: rgba(255,255,255,0.2);
+            }
+
+            .form-iframe-container {
+                background: white;
+                border-radius: var(--border-radius);
+                padding: 1.5rem;
+                margin-top: 1rem;
+            }
+
+            .form-box {
+                position: sticky;
+                top: 120px;
+                background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+                padding: 2.5rem;
+                border-radius: var(--border-radius);
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                width: 100%;
+                color: white;
             }
 
             @media (max-width: 768px) {
                 .two-columns {
                     grid-template-columns: 1fr;
                 }
+
+                .form-box {
+                    position: relative;
+                    top: 0;
+                }
+            }
+
+            .trust-block {
+                text-align: center;
+                margin-top: 2rem;
+                padding: 1.5rem;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: var(--border-radius);
+            }
+
+            .stars {
+                color: #FBC02D;
+                font-size: 1.5em;
+                margin-bottom: 0.5rem;
+            }
+
+            .trust-text {
+                color: var(--normal-color);
+                font-size: 1.1em;
+                margin-bottom: 0.5rem;
+            }
+
+            .trust-subtext {
+                color: var(--diminished-color);
+                font-size: 0.9em;
+            }
+
+            .faq-section {
+                max-width: var(--container-width);
+                margin: 2rem auto;
+                padding: 0 2rem;
+            }
+
+            .faq-title {
+                text-align: center;
+                margin-bottom: 2rem;
+                color: var(--normal-color);
+            }
+
+            .faq-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .faq-item {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: var(--border-radius);
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: var(--transition);
+            }
+
+            .faq-question {
+                padding: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                font-weight: 500;
+                color: var(--primary-color);
+                background: white;
+            }
+
+            .faq-icon {
+                transition: transform 0.3s ease;
+            }
+
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                padding: 0 1.5rem;
+            }
+
+            .faq-item.active .faq-icon {
+                transform: rotate(180deg);
+            }
+
+            .faq-item.active .faq-answer {
+                max-height: 500px;
+                padding: 0 1.5rem 1.5rem 1.5rem;
+            }
+
+            .faq-answer p {
+                margin-bottom: 1rem;
+                line-height: 1.6;
+            }
+
+            .faq-answer ul {
+                margin-left: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .faq-answer li {
+                margin-bottom: 0.5rem;
             }
         </style>
     
@@ -564,6 +743,7 @@
             </div>
             <div class="two-columns">
                 <div>
+                    
                     <table class="price-table">
                         <tr>
                             <th></th>
@@ -608,37 +788,60 @@
                             <td class="economy">100€<br><span class="percentage">-50%</span></td>
                         </tr>
                     </table>
+
+                    <a href=#form class=invisible-link data-tracked=click_pictos_header>
+                        <div class=pictos>
+                            <div class=picto>
+                                <div class="picto_img material-symbols-rounded">military_tech</div>
+                                <div class=picto_text>La Hongrie est le <strong>numéro 1 mondial du tourisme dentaire</strong>.</div>
+                            </div>
+                            <div class=picto>
+                                <div class="picto_img material-symbols-rounded">verified</div>
+                                <div class=picto_text>Implants, bridges et couronnes <strong>identiques à ceux posés en France</strong>.</div>
+                            </div>
+                            <div class=picto>
+                                <div class="picto_img material-symbols-rounded">health_and_safety</div>
+                                <div class=picto_text>Intervention <strong>remboursée par la Sécurité Sociale française</strong>.</div>
+                            </div>
+                            <div class=picto>
+                                <div class="picto_img material-symbols-rounded">luggage</div>
+                                <div class=picto_text>Profitez-en pour visiter Budapest, <strong>l'une des plus belles villes d'Europe</strong>.</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                
                 <div>
                     <div class="form-box form-dark" id="form-box">
-                        <p class="white titre_formulaire">VOTRE DEVIS DENTAIRE EN 24 HEURES</p>
-                        <p class="align-center">Un chirurgien-dentiste vous rappelle pour vous proposer un devis et répondre à vos questions.</p>
-                        <p class="align-center"><strong>C'est gratuit et sans engagement !</strong></p>
-                        <iframe data-tally-src="https://tally.so/embed/3q588g?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading=lazy width=100% height=973 frameborder=0 marginheight=0 marginwidth=0 title="Ypsée V1"></iframe>
+                        <div class="form-header">
+                            <span class="material-symbols-rounded form-icon">medical_services</span>
+                            <h3 class="form-box-title">Demandez votre devis personnalisé</h3>
+                            <p class="form-box-subtitle">Un chirurgien-dentiste vous rappelle sous 24h</p>
+                        </div>
+                        <div class="form-iframe-container">
+                            <iframe data-tally-src="https://tally.so/embed/3q588g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="394" frameborder="0" marginheight="0" marginwidth="0" title="Ypsée V2"></iframe>
+                            <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                        </div>
+                        <div class="trust-block">
+                            <div class="stars">
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                            </div>
+                            <div class="trust-text">
+                                <strong>4.9/5</strong> - Plus de 10 000 patients satisfaits
+                            </div>
+                            <div class="trust-subtext">
+                                Rejoignez les milliers de patients satisfaits qui nous font confiance depuis 2007
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <a href=#form class=invisible-link data-tracked=click_pictos_header>
-                <div class=pictos>
-                    <div class=picto>
-                        <div class="picto_img material-symbols-rounded">military_tech</div>
-                        <div class=picto_text>La Hongrie est le <strong>numéro 1 mondial du tourisme dentaire</strong>.</div>
-                    </div>
-                    <div class=picto>
-                        <div class="picto_img material-symbols-rounded">verified</div>
-                        <div class=picto_text>Implants, bridges et couronnes <strong>identiques à ceux posés en France</strong>.</div>
-                    </div>
-                    <div class=picto>
-                        <div class="picto_img material-symbols-rounded">health_and_safety</div>
-                        <div class=picto_text>Intervention <strong>remboursée par la Sécurité Sociale française</strong>.</div>
-                    </div>
-                    <div class=picto>
-                        <div class="picto_img material-symbols-rounded">luggage</div>
-                        <div class=picto_text>Profitez-en pour visiter Budapest, <strong>l'une des plus belles villes d'Europe</strong>.</div>
-                    </div>
-                </div>
-            </a>
+            <h2 class=align-center>Pourquoi choisir la Hongrie pour votre intervention dentaire ?</h2>
 
             <div class=puces>
                 <div class=puce>
@@ -689,11 +892,112 @@
 
 </section>
 
+<section class="faq-section">
+    <h2 class="faq-title">Questions fréquentes sur les soins dentaires en Hongrie</h2>
+    
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                Quelles sont les garanties offertes sur les soins dentaires ?
+                <span class="material-symbols-rounded faq-icon">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Ypsée et ses cliniques partenaires offrent des garanties étendues sur tous les soins :</p>
+                <ul>
+                    <li>Implants dentaires : garantie de 10 ans</li>
+                    <li>Bridges et couronnes : garantie de 5 ans</li>
+                    <li>Facettes céramiques : garantie de 3 ans</li>
+                </ul>
+                <p>En cas de rejet d'implant pendant la période d'ostéointégration (4-6 mois), la pose d'un nouvel implant est prise en charge gratuitement.</p>
+            </div>
+        </div>
 
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment se déroule le suivi post-opératoire ?
+                <span class="material-symbols-rounded faq-icon">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Le suivi post-opératoire est assuré de manière complète :</p>
+                <ul>
+                    <li>Contrat de garantie écrit remis en fin de traitement</li>
+                    <li>Suivi régulier avec votre chirurgien-dentiste</li>
+                    <li>Visite de contrôle annuelle en Hongrie recommandée</li>
+                    <li>Assistance continue par l'équipe Ypsée</li>
+                </ul>
+            </div>
+        </div>
 
-<script>document.addEventListener("DOMContentLoaded",function(){const t=document.getElementById("form-box");document.querySelectorAll('a[href="#form"]').forEach(function(e){e.addEventListener("click",function(e){setTimeout(function(){t.classList.add("animate__animated","animate__wobble")},750),setTimeout(function(){t.classList.remove("animate__animated","animate__wobble")},2e3)})})})</script>
+        <div class="faq-item">
+            <div class="faq-question">
+                Pourquoi choisir la Hongrie plutôt qu'un autre pays ?
+                <span class="material-symbols-rounded faq-icon">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>La Hongrie présente plusieurs avantages majeurs :</p>
+                <ul>
+                    <li>Numéro 1 mondial du tourisme dentaire</li>
+                    <li>Respect strict des normes européennes</li>
+                    <li>Chirurgiens-dentistes parlant couramment français</li>
+                    <li>Matériel et équipements identiques à ceux utilisés en France</li>
+                    <li>Soins remboursés par la Sécurité Sociale française</li>
+                </ul>
+            </div>
+        </div>
 
-<style>footer{padding-top:2rem;padding-bottom:2rem;box-shadow:2px 2px 5px grey}footer .footer-links{display:grid;text-align:center;margin-bottom:2rem}footer a{color:var(--diminished-color);text-decoration:none;font-size:var(--footer-p-font-size)}footer a:hover,footer a:visited{color:var(--diminished-color)}</style>
+        <div class="faq-item">
+            <div class="faq-question">
+                Comment se passe la prise en charge par Ypsée ?
+                <span class="material-symbols-rounded faq-icon">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Ypsée assure une prise en charge complète :</p>
+                <ul>
+                    <li>Organisation du voyage et du séjour</li>
+                    <li>Accompagnement personnalisé</li>
+                    <li>Devis détaillé sous 24h</li>
+                    <li>Tarification transparente sans frais cachés</li>
+                    <li>Plus de 10 000 patients pris en charge depuis 2007</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Les soins sont-ils remboursés ?
+                <span class="material-symbols-rounded faq-icon">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Oui, les soins dentaires en Hongrie sont remboursés :</p>
+                <ul>
+                    <li>Prise en charge par la Sécurité Sociale française</li>
+                    <li>Remboursement selon les mêmes bases qu'en France</li>
+                    <li>Factures détaillées fournies avec codes de nomenclature</li>
+                    <li>Possibilité de prise en charge par les mutuelles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Ferme toutes les réponses
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Ouvre la réponse cliquée si elle n'était pas déjà ouverte
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+</script>
 
 <footer>
     <div class=align-center><img src=img/ypsee2.svg style=width:250px alt="">
@@ -701,7 +1005,7 @@
         <div class=footer-links>
             <div><a href=https://www.ypsee.com/mentions-legales/ >Mentions légales</a></div>
         </div>
-        <span style=color:var(--normal-color)>Coypright © 2007-2023 Ypsée.</span>
+        <span style=color:var(--normal-color)>Coypright © 2007-2025 Ypsée.</span>
     </div>
 </footer>
         </main>
