@@ -650,7 +650,7 @@
             }
 
             .faq-title {
-                text-align: center;
+            text-align: center;
                 margin-bottom: 2rem;
                 color: var(--normal-color);
             }
@@ -720,7 +720,7 @@
     
         
         <main class=content>
-            
+
 <nav class=menu id=menu>
     <div class=menu-logo>
         <a href=https://www.ypsee.com/ ><img src=img/ypsee2.svg style=width:150px alt=""></a>
@@ -790,27 +790,27 @@
                     </table>
 
                     <a href=#form class=invisible-link data-tracked=click_pictos_header>
-                        <div class=pictos>
-                            <div class=picto>
-                                <div class="picto_img material-symbols-rounded">military_tech</div>
-                                <div class=picto_text>La Hongrie est le <strong>numéro 1 mondial du tourisme dentaire</strong>.</div>
-                            </div>
-                            <div class=picto>
-                                <div class="picto_img material-symbols-rounded">verified</div>
-                                <div class=picto_text>Implants, bridges et couronnes <strong>identiques à ceux posés en France</strong>.</div>
-                            </div>
-                            <div class=picto>
-                                <div class="picto_img material-symbols-rounded">health_and_safety</div>
-                                <div class=picto_text>Intervention <strong>remboursée par la Sécurité Sociale française</strong>.</div>
-                            </div>
-                            <div class=picto>
-                                <div class="picto_img material-symbols-rounded">luggage</div>
-                                <div class=picto_text>Profitez-en pour visiter Budapest, <strong>l'une des plus belles villes d'Europe</strong>.</div>
-                            </div>
+<div class=pictos>
+    <div class=picto>
+        <div class="picto_img material-symbols-rounded">military_tech</div>
+        <div class=picto_text>La Hongrie est le <strong>numéro 1 mondial du tourisme dentaire</strong>.</div>
+    </div>
+    <div class=picto>
+        <div class="picto_img material-symbols-rounded">verified</div>
+        <div class=picto_text>Implants, bridges et couronnes <strong>identiques à ceux posés en France</strong>.</div>
+    </div>
+    <div class=picto>
+        <div class="picto_img material-symbols-rounded">health_and_safety</div>
+        <div class=picto_text>Intervention <strong>remboursée par la Sécurité Sociale française</strong>.</div>
+    </div>
+    <div class=picto>
+        <div class="picto_img material-symbols-rounded">luggage</div>
+        <div class=picto_text>Profitez-en pour visiter Budapest, <strong>l'une des plus belles villes d'Europe</strong>.</div>
+    </div>
                         </div>
                     </a>
-                </div>
-                
+</div>
+
                 <div>
                     <div class="form-box form-dark" id="form-box">
                         <div class="form-header">
@@ -843,27 +843,170 @@
 
             <h2 class=align-center>Pourquoi choisir la Hongrie pour votre intervention dentaire ?</h2>
 
-            <div class=puces>
-                <div class=puce>
+<div class=puces>
+        <div class=puce>
                     <img src=img/puce.png class=puce_img alt="">
-                    <div class=puce_text>Contrairement à la Turquie, <strong>les cliniques hongroises respectent toutes les législations européennes</strong>.</div>
-                </div>
-                <div class=puce>
+            <div class=puce_text>Contrairement à la Turquie, <strong>les cliniques hongroises respectent toutes les législations européennes</strong>.</div>
+        </div>
+        <div class=puce>
                     <img src=img/puce.png class=puce_img alt="">
-                    <div class=puce_text>Vous serez accompagné(e). Nos chirurgiens-dentistes <strong>parlent tous couramment français</strong>.</div>
-                </div>
-                <div class=puce>
+            <div class=puce_text>Vous serez accompagné(e). Nos chirurgiens-dentistes <strong>parlent tous couramment français</strong>.</div>
+        </div>
+        <div class=puce>
                     <img src=img/puce.png class=puce_img alt="">
-                    <div class=puce_text>Nous avons pris en charge <strong>plus de 10 000 patients depuis 2007</strong>.</div>
-                </div>
-                <div class=puce>
+            <div class=puce_text>Nous avons pris en charge <strong>plus de 10 000 patients depuis 2007</strong>.</div>
+        </div>
+        <div class=puce>
                     <img src=img/puce.png class=puce_img alt="">
-                    <div class=puce_text>Nous assurons le <strong>suivi post-opératoire</strong>, votre intervention est <strong>garantie par contrat.</strong></div>
-                </div>
+            <div class=puce_text>Nous assurons le <strong>suivi post-opératoire</strong>, votre intervention est <strong>garantie par contrat.</strong></div>
+        </div>
             </div>
         </div>
     </div>
 </header>
+
+<section class="images_cliniques">
+    <style>
+        .images_cliniques {
+            padding: 2rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 3rem 0;
+        }
+        
+        .mosaic-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(6, 100px);
+            gap: 1rem;
+        }
+        
+        .mosaic-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .mosaic-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .mosaic-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Disposition spécifique des images */
+        .mosaic-item:nth-child(1) { /* Image principale */
+            grid-column: 1 / 7;
+            grid-row: 1 / 4;
+        }
+        
+        .mosaic-item:nth-child(2) { /* Seconde grande image */
+            grid-column: 7 / 13;
+            grid-row: 1 / 4;
+        }
+        
+        .mosaic-item:nth-child(3) { /* Image moyenne gauche */
+            grid-column: 1 / 5;
+            grid-row: 4 / 7;
+        }
+        
+        .mosaic-item:nth-child(4) { /* Image moyenne centre */
+            grid-column: 5 / 9;
+            grid-row: 4 / 7;
+        }
+        
+        .mosaic-item:nth-child(5) { /* Image moyenne droite */
+            grid-column: 9 / 13;
+            grid-row: 4 / 7;
+        }
+
+        @media (max-width: 768px) {
+            .mosaic-container {
+                grid-template-rows: repeat(5, 200px);
+                gap: 0.5rem;
+            }
+            
+            .mosaic-item:nth-child(1) {
+                grid-column: 1 / 13;
+                grid-row: 1 / 2;
+            }
+            
+            .mosaic-item:nth-child(2) {
+                grid-column: 1 / 13;
+                grid-row: 2 / 3;
+            }
+            
+            .mosaic-item:nth-child(3) {
+                grid-column: 1 / 13;
+                grid-row: 3 / 4;
+            }
+            
+            .mosaic-item:nth-child(4) {
+                grid-column: 1 / 13;
+                grid-row: 4 / 5;
+            }
+            
+            .mosaic-item:nth-child(5) {
+                grid-column: 1 / 13;
+                grid-row: 5 / 6;
+            }
+        }
+    </style>
+
+    <h2 class=align-center style=margin-bottom:2rem>Notre clinique à Budapest</h2>
+    <p class="align-center" style="max-width: 800px; margin: 0 auto 2rem; line-height: 1.8;">
+        Notre équipe de chirurgiens-dentistes allie <strong>excellence académique</strong> et <strong>expertise pratique</strong>. Formés à la prestigieuse université Semmelweis, ils excellent en chirurgie maxillo-faciale, endodontie et implantologie. <br /><br />Chaque praticien :
+    </p>
+    <div style="max-width: 800px; margin: 0 auto 2rem; display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <span class="material-symbols-rounded" style="color: var(--primary-color);">verified</span>
+            <span>Parle couramment français pour une communication optimale</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <span class="material-symbols-rounded" style="color: var(--primary-color);">health_and_safety</span>
+            <span>Est membre actif de la Chambre des chirurgiens-dentistes Hongrois</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <span class="material-symbols-rounded" style="color: var(--primary-color);">workspace_premium</span>
+            <span>Exerce dans notre clinique certifiée ISO 9001:2008 à Budapest</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <span class="material-symbols-rounded" style="color: var(--primary-color);">shield</span>
+            <span>Dispose d'une assurance professionnelle complète</span>
+        </div>
+    </div>
+    
+    <div class="mosaic-container">
+        <div class="mosaic-item">
+            <img src="img/dentiste-en-hongrie-temoignages.png" alt="Témoignages de patients en clinique dentaire hongroise" loading="lazy">
+        </div>
+        <div class="mosaic-item">
+            <img src="img/dentiste-en-hongrie.png" alt="Dentiste en Hongrie" loading="lazy">
+        </div>
+        <div class="mosaic-item">
+            <img src="img/Implant-dentair-ebudapest.jpg" alt="Implant dentaire à Budapest" loading="lazy">
+        </div>
+        <div class="mosaic-item">
+            <img src="img/Salle-de-traitement-dentaire.png" alt="Salle de traitement dentaire moderne" loading="lazy">
+        </div>
+        <div class="mosaic-item">
+            <img src="img/Xguide-technologie.png" alt="Technologie Xguide pour implants dentaires" loading="lazy">
+        </div>
+    </div>
+</section>
 
 <section class=page-container>
     <h2 class=align-center>Ils parlent d'Ypsée</h2>
